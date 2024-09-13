@@ -364,24 +364,6 @@ def capture_image():
         logging.error("Failed to read from camera")
     return redirect('/')
 
-# @app.route('/capture', methods=['POST'])
-# def capture_image():
-#     success, frame = camera.read()
-#     if success:
-#         cv2.imshow('Captured Frame', frame)  # Display captured frame for testing
-#         cv2.waitKey(5000)  # Hold for 5 seconds to verify
-#         cv2.destroyAllWindows()  # Close the display window after verification
-#         filepath = os.path.join(app.config['UPLOAD_FOLDER'], 'realtime_capture.jpg')
-#         cv2.imwrite(filepath, frame)
-#         predicted_class, confidence = predict_fish_species(filepath)
-#         image_url = url_for('send_image', filename='realtime_capture.jpg')
-
-#         confidence_formatted = "{:.1f}".format(confidence * 100)
-#         return render_template_string(template, image_url=image_url, predicted_class=predicted_class, confidence=confidence_formatted)
-#     else:
-#         logging.error("Failed to read from camera")
-#     return redirect('/')
-
 
 @app.route('/', methods=['GET', 'POST'])
 def upload_file():
