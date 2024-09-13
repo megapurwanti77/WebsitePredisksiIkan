@@ -8,6 +8,10 @@ import numpy as np
 import logging
 import cv2
 
+import sys
+print(f"Python version: {sys.version}")
+
+
 # Setup logging
 logging.basicConfig(level=logging.DEBUG)
 
